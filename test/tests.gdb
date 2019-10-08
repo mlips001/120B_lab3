@@ -40,18 +40,18 @@ checkResult
 
 # Add tests below
 
-test "PINA: 0x00 & PINB: 0x00 => PORTC = 0x00"
-setPINA 0x00
-setPINB 0x00
+test "PINA: 0xFF & PINB: 0xFF => PORTC = 0x10"
+setPINA 0xFF
+setPINB 0xFF
 continue 5
-expectPORTC 0x00
+expectPORTC 0x10
 checkResult
 
-test "PINA: 0x00 & PINB: 0x01 => PORTC = 0x01"
-setPINA 0x00
-setPINB 0x01
+test "PINA: 0x00 & PINB: 0x1F => PORTC = 0x05"
+setPINA 0x01
+setPINB 0x0F
 continue 5
-expectPORTC 0x01
+expectPORTC 0x05
 checkResult
 
 # Report on how many tests passed/tests ran
